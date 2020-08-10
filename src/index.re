@@ -1,7 +1,10 @@
 %raw
 {| import './index.css' |};
 
-ReactDOMRe.renderToElementWithId(<App />, "root");
+switch (ReactDOMRe.Experimental.createRootWithId("root")) {
+| Some(root) => ReactDOMRe.Experimental.render(root, <App />)
+| None => Js.log("eRrOR Render with concurrent mode")
+};
 
 // Hot Module Replacement (HMR) - Remove this snippet to remove HMR.
 // Learn more: https://www.snowpack.dev/#hot-module-replacement

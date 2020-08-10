@@ -11,7 +11,16 @@
 # Issue
 
 - [ ] The `compilation` layer both of `reason-relay-compiler` and `bs-platform` is success but still `error` when run in `browser`.
-
+* Console `Error`
+```bash
+Uncaught TypeError: Cannot read property '__internal' of undefined
+    at ReasonRelay.bs.js:422
+```
+* Source file `Error`
+```diff
+// ReasonRelay.bs.js
+422 var createRelayContext = relayRuntime.__moduleExports.__internal.createRelayContext;
+```
 
 # Project Bootstrapped
 

@@ -2,12 +2,19 @@
 
 import * as React from "react";
 import * as ReactDOMRe from "reason-react/src/legacy/ReactDOMRe.bs.js";
+import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
 import * as App$AppTemplateReasonReact from "./App.bs.js";
 
 import './index.css'
 ;
 
-ReactDOMRe.renderToElementWithId(React.createElement(App$AppTemplateReasonReact.make, {}), "root");
+var root = ReactDOMRe.Experimental.createRootWithId("root");
+
+if (root !== undefined) {
+  Caml_option.valFromOption(root).render(React.createElement(App$AppTemplateReasonReact.make, {}));
+} else {
+  console.log("eRrOR Render with concurrent mode");
+}
 
 if (import.meta.hot) {
   import.meta.hot.accept();

@@ -78,194 +78,195 @@ type operationType = ReasonRelay.fragmentNode;
 let node: operationType = [%raw
   {json| (function(){
 var v0 = {
-  "kind": "ScalarField",
   "alias": null,
-  "name": "name",
   "args": null,
+  "kind": "ScalarField",
+  "name": "name",
   "storageKey": null
 },
 v1 = {
-  "kind": "ScalarField",
   "alias": null,
-  "name": "image",
   "args": null,
+  "kind": "ScalarField",
+  "name": "image",
   "storageKey": null
 },
 v2 = [
   {
-    "kind": "ScalarField",
     "alias": null,
-    "name": "minimum",
     "args": null,
+    "kind": "ScalarField",
+    "name": "minimum",
     "storageKey": null
   },
   {
-    "kind": "ScalarField",
     "alias": null,
-    "name": "maximum",
     "args": null,
+    "kind": "ScalarField",
+    "name": "maximum",
     "storageKey": null
   }
 ],
 v3 = [
   (v0/*: any*/),
   {
-    "kind": "ScalarField",
     "alias": null,
-    "name": "damage",
     "args": null,
+    "kind": "ScalarField",
+    "name": "damage",
     "storageKey": null
   }
 ];
 return {
-  "kind": "Fragment",
-  "name": "Pokemon_fragment",
-  "type": "Pokemon",
-  "metadata": null,
   "argumentDefinitions": [],
+  "kind": "Fragment",
+  "metadata": null,
+  "name": "Pokemon_fragment",
   "selections": [
     (v0/*: any*/),
     (v1/*: any*/),
     {
-      "kind": "ScalarField",
       "alias": null,
+      "args": null,
+      "kind": "ScalarField",
       "name": "number",
-      "args": null,
       "storageKey": null
     },
     {
-      "kind": "LinkedField",
       "alias": null,
+      "args": null,
+      "concreteType": "PokemonDimension",
+      "kind": "LinkedField",
       "name": "weight",
-      "storageKey": null,
-      "args": null,
-      "concreteType": "PokemonDimension",
       "plural": false,
-      "selections": (v2/*: any*/)
+      "selections": (v2/*: any*/),
+      "storageKey": null
     },
     {
-      "kind": "LinkedField",
       "alias": null,
+      "args": null,
+      "concreteType": "PokemonDimension",
+      "kind": "LinkedField",
       "name": "height",
-      "storageKey": null,
-      "args": null,
-      "concreteType": "PokemonDimension",
       "plural": false,
-      "selections": (v2/*: any*/)
+      "selections": (v2/*: any*/),
+      "storageKey": null
     },
     {
-      "kind": "ScalarField",
       "alias": null,
+      "args": null,
+      "kind": "ScalarField",
       "name": "classification",
-      "args": null,
       "storageKey": null
     },
     {
-      "kind": "ScalarField",
       "alias": null,
+      "args": null,
+      "kind": "ScalarField",
       "name": "types",
-      "args": null,
       "storageKey": null
     },
     {
+      "alias": null,
+      "args": null,
       "kind": "ScalarField",
-      "alias": null,
       "name": "resistant",
-      "args": null,
       "storageKey": null
     },
     {
-      "kind": "LinkedField",
       "alias": null,
-      "name": "attacks",
-      "storageKey": null,
       "args": null,
       "concreteType": "PokemonAttack",
+      "kind": "LinkedField",
+      "name": "attacks",
       "plural": false,
       "selections": [
         {
-          "kind": "LinkedField",
           "alias": null,
-          "name": "fast",
-          "storageKey": null,
           "args": null,
           "concreteType": "Attack",
+          "kind": "LinkedField",
+          "name": "fast",
           "plural": true,
-          "selections": (v3/*: any*/)
+          "selections": (v3/*: any*/),
+          "storageKey": null
         },
         {
-          "kind": "LinkedField",
           "alias": null,
-          "name": "special",
-          "storageKey": null,
           "args": null,
           "concreteType": "Attack",
+          "kind": "LinkedField",
+          "name": "special",
           "plural": true,
-          "selections": (v3/*: any*/)
+          "selections": (v3/*: any*/),
+          "storageKey": null
         }
-      ]
+      ],
+      "storageKey": null
     },
     {
-      "kind": "ScalarField",
       "alias": null,
+      "args": null,
+      "kind": "ScalarField",
       "name": "weaknesses",
-      "args": null,
       "storageKey": null
     },
     {
-      "kind": "ScalarField",
       "alias": null,
+      "args": null,
+      "kind": "ScalarField",
       "name": "fleeRate",
-      "args": null,
       "storageKey": null
     },
     {
-      "kind": "ScalarField",
       "alias": null,
+      "args": null,
+      "kind": "ScalarField",
       "name": "maxCP",
-      "args": null,
       "storageKey": null
     },
     {
+      "alias": null,
+      "args": null,
       "kind": "ScalarField",
-      "alias": null,
       "name": "maxHP",
-      "args": null,
       "storageKey": null
     },
     {
-      "kind": "LinkedField",
       "alias": null,
-      "name": "evolutions",
-      "storageKey": null,
       "args": null,
       "concreteType": "Pokemon",
+      "kind": "LinkedField",
+      "name": "evolutions",
       "plural": true,
       "selections": [
         (v0/*: any*/),
         (v1/*: any*/)
-      ]
+      ],
+      "storageKey": null
     },
     {
-      "kind": "LinkedField",
       "alias": null,
-      "name": "evolutionRequirements",
-      "storageKey": null,
       "args": null,
       "concreteType": "PokemonEvolutionRequirement",
+      "kind": "LinkedField",
+      "name": "evolutionRequirements",
       "plural": false,
       "selections": [
         {
-          "kind": "ScalarField",
           "alias": null,
-          "name": "amount",
           "args": null,
+          "kind": "ScalarField",
+          "name": "amount",
           "storageKey": null
         },
         (v0/*: any*/)
-      ]
+      ],
+      "storageKey": null
     }
-  ]
+  ],
+  "type": "Pokemon",
+  "abstractKey": null
 };
 })() |json}
 ];

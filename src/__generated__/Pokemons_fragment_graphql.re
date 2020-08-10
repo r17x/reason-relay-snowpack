@@ -42,33 +42,26 @@ type operationType = ReasonRelay.fragmentNode;
 
 let node: operationType = [%raw
   {json| {
-  "kind": "Fragment",
-  "name": "Pokemons_fragment",
-  "type": "Query",
-  "metadata": null,
   "argumentDefinitions": [
     {
       "kind": "RootArgument",
-      "name": "first",
-      "type": "Int!"
+      "name": "after"
     },
     {
       "kind": "RootArgument",
-      "name": "offset",
-      "type": "Int"
+      "name": "first"
     },
     {
       "kind": "RootArgument",
-      "name": "after",
-      "type": "String"
+      "name": "offset"
     }
   ],
+  "kind": "Fragment",
+  "metadata": null,
+  "name": "Pokemons_fragment",
   "selections": [
     {
-      "kind": "LinkedField",
       "alias": null,
-      "name": "pokemons",
-      "storageKey": null,
       "args": [
         {
           "kind": "Variable",
@@ -87,47 +80,52 @@ let node: operationType = [%raw
         }
       ],
       "concreteType": "PokemonList",
+      "kind": "LinkedField",
+      "name": "pokemons",
       "plural": false,
       "selections": [
         {
-          "kind": "LinkedField",
           "alias": null,
-          "name": "items",
-          "storageKey": null,
           "args": null,
           "concreteType": "Pokemon",
+          "kind": "LinkedField",
+          "name": "items",
           "plural": true,
           "selections": [
             {
+              "args": null,
               "kind": "FragmentSpread",
-              "name": "Pokemon_fragment",
-              "args": null
+              "name": "Pokemon_fragment"
             }
-          ]
+          ],
+          "storageKey": null
         },
         {
-          "kind": "ScalarField",
           "alias": null,
+          "args": null,
+          "kind": "ScalarField",
           "name": "first",
-          "args": null,
           "storageKey": null
         },
         {
-          "kind": "ScalarField",
           "alias": null,
+          "args": null,
+          "kind": "ScalarField",
           "name": "offset",
-          "args": null,
           "storageKey": null
         },
         {
-          "kind": "ScalarField",
           "alias": null,
-          "name": "nextOffset",
           "args": null,
+          "kind": "ScalarField",
+          "name": "nextOffset",
           "storageKey": null
         }
-      ]
+      ],
+      "storageKey": null
     }
-  ]
+  ],
+  "type": "Query",
+  "abstractKey": null
 } |json}
 ];
