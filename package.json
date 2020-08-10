@@ -1,0 +1,31 @@
+{
+  "scripts": {
+    "prestart": "reason-relay-compiler",
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "test": "jest",
+    "build:re": "bsb -make-world",
+    "clean:re": "bsb -clean-world"
+  },
+  "devDependencies": {
+    "@glennsl/bs-jest": "^0.5.1",
+    "@snowpack/app-scripts-react": "^1.2.0",
+    "@testing-library/jest-dom": "^5.10.1",
+    "@testing-library/react": "^10.3.0",
+    "bs-fetch": "0.6.2",
+    "bs-platform": "8.0.1",
+    "bs-react-testing-library": "^0.7.3",
+    "graphql": "15.1.0",
+    "jest": "^26.0.1",
+    "react": "^16.13.0",
+    "react-dom": "^16.13.0",
+    "react-relay": "0.0.0-experimental-8058ef82",
+    "reason-promise": "1.1.1",
+    "reason-react": "^0.9.1",
+    "reason-relay": "0.11.0",
+    "relay-compiler": "9.0.0",
+    "relay-config": "9.0.0",
+    "relay-runtime": "9.0.0",
+    "snowpack": "^2.5.4"
+  }
+}
