@@ -3,7 +3,9 @@
 import * as React from "react";
 import * as ReactDOMRe from "reason-react/src/legacy/ReactDOMRe.bs.js";
 import * as Caml_option from "bs-platform/lib/es6/caml_option.js";
+import * as ReasonRelay from "reason-relay/src/ReasonRelay.bs.js";
 import * as App$AppTemplateReasonReact from "./App.bs.js";
+import * as RelayEnv$AppTemplateReasonReact from "./RelayEnv.bs.js";
 
 import './index.css'
 ;
@@ -11,7 +13,10 @@ import './index.css'
 var root = ReactDOMRe.Experimental.createRootWithId("root");
 
 if (root !== undefined) {
-  Caml_option.valFromOption(root).render(React.createElement(App$AppTemplateReasonReact.make, {}));
+  Caml_option.valFromOption(root).render(React.createElement(ReasonRelay.Context.Provider.make, {
+            environment: RelayEnv$AppTemplateReasonReact.environment,
+            children: React.createElement(App$AppTemplateReasonReact.make, {})
+          }));
 } else {
   console.log("eRrOR Render with concurrent mode");
 }

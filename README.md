@@ -22,6 +22,8 @@ Uncaught TypeError: Cannot read property '__internal' of undefined
 422 var createRelayContext = relayRuntime.__moduleExports.__internal.createRelayContext;
 ```
 
+> assume the `relay-runtime` isn't support for `ESM module`
+
 # Project Bootstrapped
 
 > Using `npm`

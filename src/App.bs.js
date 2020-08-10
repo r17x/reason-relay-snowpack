@@ -2,9 +2,7 @@
 
 import * as React from "react";
 import * as LogoSvg from "./logo.svg";
-import * as ReasonRelay from "reason-relay/src/ReasonRelay.bs.js";
 import * as Pokemons$AppTemplateReasonReact from "./Pokemons.bs.js";
-import * as RelayEnv$AppTemplateReasonReact from "./RelayEnv.bs.js";
 
 var logo = LogoSvg.default;
 
@@ -25,12 +23,9 @@ function App(Props) {
                       href: "https://reactjs.org",
                       rel: "noopener noreferrer",
                       target: "_blank"
-                    }, "Learn React")), React.createElement(ReasonRelay.Context.Provider.make, {
-                  environment: RelayEnv$AppTemplateReasonReact.environment,
-                  children: React.createElement(React.Suspense, {
-                        children: React.createElement(Pokemons$AppTemplateReasonReact.make, {}),
-                        fallback: React.createElement("div", undefined, "Loading...")
-                      })
+                    }, "Learn React")), React.createElement(React.Suspense, {
+                  children: React.createElement(Pokemons$AppTemplateReasonReact.make, {}),
+                  fallback: React.createElement("div", undefined, "Loading...")
                 }));
 }
 

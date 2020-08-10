@@ -2,7 +2,13 @@
 {| import './index.css' |};
 
 switch (ReactDOMRe.Experimental.createRootWithId("root")) {
-| Some(root) => ReactDOMRe.Experimental.render(root, <App />)
+| Some(root) =>
+  ReactDOMRe.Experimental.render(
+    root,
+    <ReasonRelay.Context.Provider environment=RelayEnv.environment>
+      <App />
+    </ReasonRelay.Context.Provider>,
+  )
 | None => Js.log("eRrOR Render with concurrent mode")
 };
 

@@ -21,10 +21,8 @@ let make = () => {
         {React.string("Learn React")}
       </a>
     </header>
-    <ReasonRelay.Context.Provider environment=RelayEnv.environment>
-      <React.Suspense fallback={<div> "Loading..."->React.string </div>}>
-        <Pokemons />
-      </React.Suspense>
-    </ReasonRelay.Context.Provider>
+    <React.Suspense fallback={<div> "Loading..."->React.string </div>}>
+      <Pokemons />
+    </React.Suspense>
   </div>;
 };
